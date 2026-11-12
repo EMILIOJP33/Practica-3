@@ -125,11 +125,11 @@ git push origin main
    ramas modificaron la misma línea del título de forma diferente.
 2. Si se aceptaba la versión de `develop`, se podía volver a publicar la
    errata corregida por el hotfix y perder la versión `1.0.1`.
-3. La sincronización debía hacerse justo después de integrar el hotfix en
-   `main` y antes de continuar integrando la feature. El comando apropiado es
-   `git switch develop` seguido de `git merge main` (o actualizar `develop`
-   desde `main` antes de integrar la feature); así el arreglo llega a la rama
-   de desarrollo.
+3. Justo después de integrar el hotfix en `main` y antes de empezar los cambios
+   de la feature, había que llevar `main` a `develop` y a `feature/dev_1`:
+   `git switch develop` y `git merge main`; después
+   `git switch feature/dev_1` y `git merge main`. Así ambas ramas parten del
+   arreglo antes de divergir de nuevo.
 
 ## Evidencias y entrega
 
